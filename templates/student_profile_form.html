@@ -1,8 +1,36 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends 'base.html' %}
 
-<h1>Page where student edits the form and submits</h1>
+{% block head %}
+<title>Resume Upload</title>
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+<div class="container">
+    <!-- TODO Replace palceholder with actual values derived from PDF -->
+    <form method="POST">
+  
+      <label for="fname">Full Name</label>
+      <input type="text" id="fname" name="fullname" placeholder='' value="Nikhil Koditala">
+
+      <label for="edu">Education</label>
+      <input type="text" id="edu" name="education" value='Master of Science in Computer Science'>
+  
+      <label for="skills">Skills</label>
+      <input type="text" id="skills" name="skills" value="C/C++, Python, Javascript, SQL, Java, Tensorflow, AWS" placeholder=''>
+      
+      <label for="phone">Your phone number:</label>
+      <input type="tel" id="phone" name="phone" value="949-0440-654" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}">
+ 
+      <label for="exp">Work Experience</label>
+      <textarea id="exp" name="workexperience" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  </div>
+<div class="topright">
+    <form action="/login/" method="post">
+      <button type="submit" class="btn btn-success topright">Logout</button>
+  </form>
+</div>
+  {% endblock %}

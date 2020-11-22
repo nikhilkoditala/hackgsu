@@ -1,8 +1,22 @@
-<!DOCTYPE html>
-<html>
-<body>
+ 
+{% extends 'base.html' %}
 
-<h1>Page to upload resume</h1>
+{% block head %}
+<title>Resume Upload</title>
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+<div align="center" style="margin-top: 10%">
+    <h1>Upload your Resume</h1>
+    <form method=post enctype=multipart/form-data>
+        <p><input type=file name=file>
+            <input type=submit value=Upload>
+        </p>
+    </form>
+</div>
+<div class="topright">
+    <form action="/forward/" method="post">
+      <button type="submit" class="btn btn-success topright">Logout</button>
+  </form>
+</div>
+{% endblock %}
