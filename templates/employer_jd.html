@@ -1,8 +1,97 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h1>Page where employer can enter jd in text box and submit</h1>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">// <![CDATA[
+          function loading(){
+              $("#loading").show();
+              $("#content").hide();       
+          }
+        // ]]></script>
+        <style >
+          .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+          }
+          .topright {
+            position: absolute;
+            top: 15px;
+            right: 26px;
+            font-size: 18px;
+          }
+          input[type=button], input[type=submit]{
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 36px;
+            border-radius: 18px;
+            background-color:green;
+            border: solid 1px transparent;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all .1s ease-in-out;
+            left: 50%;
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+          }
+          .subhover:hover{
+            background-color: transparent;
+            border-color: rgb(17, 4, 4);
+            color: green;
+            transition: all .1s ease-in-out;
+          }
+          div#loading {
+          display: none;
+          cursor: wait;
+          }
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1%;
+            }
+            .column {
+              float: left;
+              width: 33%;
+              padding: 20px;
+            }
+
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+        </style>
+</head>
+
+
+<body>
+    <img src="/static/combined.png" class="topleft" alt="logosz" style="width:300px;height:100px;">
+    <div class="topright">
+        <form action="/forward/" method="post">
+          <button type="submit" class="btn btn-success topright">Logout</button>
+      </form>
+    </div>
+<div class="container" style="margin-top:10%">
+  <h2>Welcome back John </h2>
+  <h2>Enter your Job Description below and we will suggest you a list of potential diverse candidates ready to hire!!</h2>
+    <form method="POST" name="myform">
+
+        <div class="form-group">
+            <label for="jd"></label>
+            <textarea class="form-control" rows="5" maxlength="140" name="data"></textarea>
+        </div>
+
+      <input type="submit" class="subhover" value="Submit" >
+  </form>
+</div>
 
 </body>
 </html>

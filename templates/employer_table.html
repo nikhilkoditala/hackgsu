@@ -1,8 +1,93 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!DOCTYPE html> 
+  
+<html> 
+<head> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <meta http-equiv="refresh" content="60">
+    <title>List of Potential Candidates</title> 
+</head> 
+  
+<!-- Adding some style to table (OPTIONAL) -->
+<style type="text/css"> 
+        .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+          }
+          .topright {
+            position: absolute;
+            top: 15px;
+            right: 26px;
+            font-size: 18px;
+          }
+      
 
-<h1>Page where employer can see list of candidates in table</h1>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+            padding: 30%;
+            margin: auto;
+            }
 
-</body>
-</html>
+            #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0CB8F3;
+            color: white;
+        }
+
+</style> 
+  
+<body> 
+        <img src="/static/combined.png" class="topleft" alt="logosz" style="width:300px;height:100px;">
+        <div class="topright">
+            <form action="/forward/" method="post">
+              <button type="submit" class="btn btn-success topright">Logout</button>
+          </form>
+        </div>
+
+
+        <div class="container" style="margin-top:10%;"></div>
+            <h2 style="margin-left: 10%">Here are the list of Candiates best suitable for the JD</h2>
+            <table id="customers" class="table"> 
+                <thead class="thead-dark">
+                <tr>     
+                    <th>Skills</th> 
+                    <th>Education</th>
+                    <th>Work Experience</th>
+                    <th>Fit</th>
+                    <th>Phone Number</th> 
+                    <!-- <th style="background-color:rgb(1, 207, 139)">MQC to process</th>
+                    <th style="background-color:darkcyan" >VQC to send</th> -->
+                </tr> 
+            </thead>
+            {%for i in range(0, len)%} 
+            <tr> 
+                <td>{{skills[i]}}</td> 
+                <td>{{education[i]}}</td> 
+                <td>{{work_exp[i]}}</td> 
+                <td>{{scores[i]}}</td> 
+                <td>{{ph_nos[i]}}</td> 
+            {%endfor%} 
+            
+            </tr> 
+            
+            </table> 
+        </div> 
+  
+</body> 
+</html> 
