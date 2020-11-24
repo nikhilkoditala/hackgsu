@@ -1,4 +1,4 @@
-# hackgsu
+# hackGSU
 ## Inspiration
 Diversity in the workplace will lead to creativity. People with different backgrounds tend to have different experiences and thus different perspectives. But often, there is an employer's bias which unknowingly prefers candidates from a particular category over another (for ex: males over females). 
 
